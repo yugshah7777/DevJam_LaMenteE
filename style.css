@@ -1,0 +1,54 @@
+.login-box {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+.LoginForm {
+    width: 45vh;
+}
+
+.login {
+    height: 0rem;
+}
+
+footer {
+    text-align: end; 
+    position: fixed;
+    bottom: 0%;
+    right: 0%;
+    width: 100%;
+    height: 2.5rem; 
+    background-color: #0d0550;
+    color: white;
+    font-size: large;
+}
+
+.home ul a, .login ul a{
+    background-color: #0d0550;
+    color: white;
+    margin-right: 1.5vh;
+}
+
+.FAQ {
+    background-color: #BBE1FA;
+    border-radius: 5%;
+}
+
+.FAQs h3, .features h3, .review h3 {
+    color: #0d0550;
+}
+
+.review {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+.review img {
+    margin-top: 2.5rem;
+    height: 10rem;
+    border-radius: 50%;
+}
