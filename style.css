@@ -142,5 +142,12 @@ nav-link {
     transform: scale(1.03);
 }
 
+.col-lg-4{
+    background-color: #4a447c29;
+    border-radius: 15px;
+    width: 450px;
+    margin: 15px;
+}
+
 
 
