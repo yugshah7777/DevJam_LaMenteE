@@ -8,6 +8,11 @@
 
 .LoginForm {
     width: 45vh;
+    color: #4A447C;
+}
+
+.LoginForm h1 {
+    color: #0D0550;
 }
 
 .login {
@@ -34,12 +39,20 @@ footer {
 
 .FAQ {
     /* background-color: #BBE1FA; */
-    background: linear-gradient(to bottom, white, #bbe1fa6c);
+    background: linear-gradient(to bottom, white, #4a447c29);
     border-radius: 5%;
 }
 
 .FAQs h3, .features h3, .review h3 {
-    color: #0d0550;
+    color: #4A447C;
+}
+
+.home h2 {
+    color: #0D0550;
+}
+
+.home p {
+    color: #7B89B1;
 }
 
 .review {
@@ -72,10 +85,19 @@ footer {
     color: rgb(249, 247, 247);
 }
 
+.LOGIN>.Student h1{
+    color: #0D0550;
+}
+
+.LOGIN>.Student p, .LOGIN>.Student button {
+    color: #4A447C;
+    outline: #4A447C;
+}
+
 .LOGIN img {
     height: 6rem;
 }
 
 .StudSearch {
-    background: linear-gradient(to bottom, white, #bbe1fa6c);
+    background: linear-gradient(to bottom, white, #4a447c29);
 }
