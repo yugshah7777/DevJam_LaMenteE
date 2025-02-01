@@ -28,8 +28,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 AOS.init({
-    duration: 1100, // Animation duration in milliseconds
-    easing: 'ease-in-out', // Easing effect
-    once: true // Animation happens only once
+    duration: 1200, // Slower animations for more impact
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 100 // Start animation when 100px before element enters viewport
+});
+
+document.querySelectorAll(".nav-link").forEach(link => {
+    link.addEventListener("click", function (event) {
+        event.preventDefault();
+        const sectionId = this.getAttribute("href").substring(1);
+        const target = document.getElementById(sectionId);
+        window.scrollTo({
+            top: target.offsetTop - 70,
+            behavior: "smooth"
+        });
+    });
 });
 
