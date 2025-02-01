@@ -122,6 +122,23 @@ nav-link {
     transform: scale(1.05);
 }
 
+.about, .review {
+    transition: transform 0.3s ease-in-out;
+}
+
+.about:hover, .review:hover {
+    transform: scale(1.05);
+}
+
+.FAQs .col {
+    transition: transform 0.3s ease-in-out;
+}
+
+.FAQs .col:hover {
+    transform: scale(1.05);
+}
+
+
 #icon-grid .align-items-start:hover {
     transform: scale(1.03);
 }
@@ -129,3 +146,4 @@ nav-link {
 #reviews .col-lg-4:hover{
     transform: scale(1.05);
 }
+
