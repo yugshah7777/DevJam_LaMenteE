@@ -53,6 +53,10 @@ footer {
     border-radius: 50%;
 }
 
+.about {
+    margin-left: 1.5rem;
+}
+
 .LOGIN {
     display: flex;
     height: 100vh;
