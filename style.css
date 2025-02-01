@@ -122,7 +122,7 @@ nav-link {
     transform: scale(1.05);
 }
 
-.about, .review .col-lg-4 {
+.about .py-3, .review .col-lg-4 {
     transition: transform 0.3s ease-in-out;
 }
 
@@ -130,7 +130,7 @@ nav-link {
     transform: scale(1.02);
 }
 
-.about:hover{
+.about .py-3:hover{
     transform: scale(1.01);
 }
 
