@@ -82,3 +82,8 @@ footer {
 .StudSearch {
     background: linear-gradient(to bottom, white, #bbe1fa6c);
 }
+
+footer{
+    position: relative;
+    bottom: 0;
+}
