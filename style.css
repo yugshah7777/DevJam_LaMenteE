@@ -52,3 +52,29 @@ footer {
     height: 10rem;
     border-radius: 50%;
 }
+
+.LOGIN {
+    display: flex;
+    height: 100vh;
+}
+
+.LOGIN>div {
+    text-align: center;
+}
+
+.LOGIN>.Mentor {
+    background: linear-gradient(to bottom, #0d0550, #BBE1FA);
+    color: rgb(249, 247, 247);
+}
+
+.LOGIN>.Student button {
+    background: linear-gradient(to bottom, #0d0550, #BBE1FA);
+}
+
+.LOGIN img {
+    height: 6rem;
+}
+
+.StudSearch {
+    background: linear-gradient(to bottom, white, #bbe1fa6c);
+}
