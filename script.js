@@ -27,3 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+AOS.init({
+    duration: 1100, // Animation duration in milliseconds
+    easing: 'ease-in-out', // Easing effect
+    once: true // Animation happens only once
+});
+
