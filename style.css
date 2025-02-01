@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .login-box {
     height: 100vh;
     display: flex;
@@ -38,7 +42,6 @@ footer {
 }
 
 .FAQ {
-    /* background-color: #BBE1FA; */
     background: linear-gradient(to bottom, white, #4a447c29);
     border-radius: 5%;
 }
@@ -100,4 +103,29 @@ footer {
 
 .StudSearch {
     background: linear-gradient(to bottom, white, #4a447c29);
+}
+
+nav-link {
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.feature {
+    transition: transform 0.3s ease-in-out;
+}
+
+.feature:hover {
+    transform: scale(1.05);
+}
+
+#icon-grid .align-items-start:hover {
+    transform: scale(1.03);
+}
+
+#reviews .col-lg-4:hover{
+    transform: scale(1.05);
 }
