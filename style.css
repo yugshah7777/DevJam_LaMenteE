@@ -152,6 +152,17 @@ nav-link {
     width: 23.5rem;    
 }
 
+.LOGIN{
+    transition: transform 0.3s ease-in-out;
+}
+
+.LOGIN :hover{
+    transform: scale(1.02);
+}
+
+
+
+
 
 
 
