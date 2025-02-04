@@ -1,3 +1,54 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "users";
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$alertType = "";
+$alertMessage = "";
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
+    $last_name = mysqli_real_escape_string($conn, $_POST['last_name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $confirm_password = mysqli_real_escape_string($conn, $_POST['confirm_password']);
+
+    if ($password !== $confirm_password) {
+        $alertType = "danger";
+        $alertMessage = "Passwords do not match!";
+    } else {
+        $checkEmail = "SELECT email FROM students WHERE email='$email'";
+        $result = $conn->query($checkEmail);
+
+        if ($result->num_rows > 0) {
+            $alertType = "warning";
+            $alertMessage = "Email already registered! Please use another.";
+        } else {
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+            $sql = "INSERT INTO students (first_name, last_name, email, password, dt) 
+                    VALUES ('$first_name', '$last_name', '$email', '$hashed_password', current_timestamp())";
+
+            if ($conn->query($sql) === TRUE) {
+                $alertType = "success";
+                $alertMessage = "Sign Up Successful! Redirecting to login...";
+                echo "<script>setTimeout(function(){ window.location.href = 'loginStudent.php'; }, 2000);</script>";
+            } else {
+                $alertType = "danger";
+                $alertMessage = "Error: " . $conn->error;
+            }
+        }
+    }
+    $conn->close();
+}
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -16,27 +67,36 @@
     </head>
 
     <body style="background-color: rgb(249, 247, 247);">
+        <div class="container mt-4">
+            <?php if (!empty($alertMessage)) { ?>
+                <div class="alert alert-<?php echo $alertType; ?> alert-dismissible fade show" role="alert">
+                    <?php echo $alertMessage; ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <?php } ?>
+        </div>
+
         <div class="login-box">
-            <form class="LoginForm">
+            <form class="LoginForm" action="signupStudent.php" method="POST">
                 <h1 class="h3 mb-3 fw-normal">Student's Sign Up</h1>
                 <div class="form-floating mb-2">
-                <input type="name" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <input type="name" name="first_name" class="form-control" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">First Name</label>
                 </div> 
                 <div class="form-floating mb-2">
-                <input type="name" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <input type="name" name="last_name" class="form-control" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">Last Name</label>
                 </div>             
                 <div class="form-floating mb-2">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">Email address</label>
                 </div>
                 <div class="form-floating mb-2">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
                 <label for="floatingPassword">Password</label>
                 </div>
                 <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input type="password" name="confirm_password" class="form-control" id="floatingPassword" placeholder="Password">
                 <label for="floatingPassword">Confirm Password</label>
                 </div>
             
@@ -46,8 +106,8 @@
                     Remember me
                 </label>
                 </div>
-                <a href="./loginStudent.php"><button class="btn w-100 py-2" type="button" style="background-color: #7B89B1; color: white;">Sign Up</button></a>
-                <p style="margin-top: 0.5rem;">Already Registered?   <a href="./loginStudent.php" style=" text-decoration: none;">Login...</a></p>
+                <button class="btn w-100 py-2" type="submit" style="background-color: #7B89B1; color: white;">Sign Up</button>
+                <p style="margin-top: 0.5rem;">Already Registered?   <a href="./loginStudent.php" style=" text-decoration: none;">Login</a></p>
             </form>
         </div>  
         
