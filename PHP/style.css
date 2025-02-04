@@ -41,6 +41,36 @@ footer {
     margin-right: 1.5vh;
 }
 
+#navCenter {
+    display: flex;
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    z-index: 1000;
+    width: 100vw;
+    justify-content: center;
+}
+
+#navCenter a {
+    background-color: transparent;
+    color: #0D0550;
+}
+
+#navC {
+    position: absolute;
+    z-index: 2000;
+    right: 1rem;
+    top: 1rem;
+}
+
+#navfix {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 5000;
+    background-color: white;
+}
+
 .FAQ {
     background: linear-gradient(to bottom, #F9F7F7, #4a447c29);
     border-radius: 5%;
