@@ -1,3 +1,50 @@
+<?php
+session_start();
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "users";
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$alertType = "";
+$alertMessage = "";
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = $_POST['password'];
+
+    $sql = "SELECT * FROM mentors WHERE email='$email'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows == 1) {
+        $row = $result->fetch_assoc();
+        if (password_verify($password, $row['password'])) {
+            $_SESSION['loggedin'] = true;
+            $_SESSION['user_id'] = $row['id']; 
+            $_SESSION['first_name'] = $row['first_name'];
+            $_SESSION['email'] = $row['email'];
+
+            $alertType = "success";
+            $alertMessage = "Login Successful! Redirecting to dashboard...";
+            echo "<script>setTimeout(function(){ window.location.href = 'mentorhome.php'; }, 2000);</script>";
+        } else {
+            $alertType = "danger";
+            $alertMessage = "Incorrect Password!";
+        }
+    } else {
+        $alertType = "warning";
+        $alertMessage = "No account found with this email!";
+    }
+    $conn->close();
+}
+?>
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -36,15 +83,21 @@
         </div>
 
         <div class="login-box">
-            <form class="LoginForm">
+            <form class="LoginForm" action="loginMentor.php" method="POST">
                 <h1 class="h3 mb-3 fw-normal">Mentor's Sign In</h1>
+                <?php if (!empty($alertMessage)) { ?>
+                <div class="alert alert-<?php echo $alertType; ?> alert-dismissible fade show" role="alert">
+                    <?php echo $alertMessage; ?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <?php } ?>
             
                 <div class="form-floating mb-2">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                 <label for="floatingInput">Email address</label>
                 </div>
                 <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
                 <label for="floatingPassword">Password</label>
                 </div>
             
@@ -54,8 +107,8 @@
                     Remember me
                 </label>
                 </div>
-                <a href="./mentorhome.php"><button class="btn w-100 py-2" type="button" style="background-color: #7B89B1; color: white;">Sign in</button></a>
-                <p style="margin-top: 0.5rem;">Do not have an account?   <a href="./signupMentor.php" style=" text-decoration: none;">Sign Up...</a></p>
+                <button class="btn w-100 py-2" type="submit" style="background-color: #7B89B1; color: white;">Sign in</button>
+                <p style="margin-top: 0.5rem;">Do not have an account?   <a href="./signupMentor.php" style=" text-decoration: none;">Sign Up !!</a></p>
             </form>
         </div>  
 
