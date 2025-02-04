@@ -47,6 +47,7 @@
                 </label>
                 </div>
                 <a href="./loginStudent.php"><button class="btn w-100 py-2" type="button" style="background-color: #7B89B1; color: white;">Sign Up</button></a>
+                <p style="margin-top: 0.5rem;">Already Registered?   <a href="./loginStudent.php" style=" text-decoration: none;">Login...</a></p>
             </form>
         </div>  
         
