@@ -27,12 +27,14 @@
             
                 <!-- Regular Navbar (Visible on Large Screens) -->
                 <ul class="nav nav-pills d-none d-lg-flex">
+                    <div id="navCenter">
                     <li class="nav-item"><a href="./index.php" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Reviews</a></li>
-                    <li class="nav-item"><a href="./login.php" class="nav-link">Login</a></li>
+                    </div>
+                    <li class="nav-item" id="navC"><a href="./login.php" class="nav-link">Login</a></li>
                 </ul>
             
                 <!-- Three Dotted Menu (Visible on Small Screens) -->
