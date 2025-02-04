@@ -55,7 +55,7 @@
                 </label>
                 </div>
                 <a href="./studenthome.php"><button class="btn w-100 py-2" type="button" style="background-color: #7B89B1; color: white;">Sign in</button></a>
-                <a href="./signupStudent.php"><button class="btn w-100 py-2 mt-2" type="button" style="background-color: #4A447C; color: white;">Create New Account</button></a>
+                <p style="margin-top: 0.5rem;">Do not have an account?   <a href="./signupStudent.php" style=" text-decoration: none;">Sign Up...</a></p>
             </form>
         </div>  
 
