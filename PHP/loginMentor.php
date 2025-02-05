@@ -18,27 +18,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM mentors WHERE email='$email'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows == 1) {
-        $row = $result->fetch_assoc();
-        if (password_verify($password, $row['password'])) {
-            $_SESSION['loggedin'] = true;
-            $_SESSION['user_id'] = $row['id']; 
-            $_SESSION['first_name'] = $row['first_name'];
-            $_SESSION['email'] = $row['email'];
-
-            $alertType = "success";
-            $alertMessage = "Login Successful! Redirecting to dashboard...";
-            echo "<script>setTimeout(function(){ window.location.href = 'mentorhome.php'; }, 2000);</script>";
-        } else {
-            $alertType = "danger";
-            $alertMessage = "Incorrect Password!";
-        }
-    } else {
+    if (empty($email) || empty($password)) {
+        $alertType = "danger";
+        $alertMessage = "All fields are required!";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $alertType = "warning";
-        $alertMessage = "No account found with this email!";
+        $alertMessage = "Invalid email format!";
+    } else {
+        $sql = "SELECT * FROM mentors WHERE email='$email'";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows == 1) {
+            $row = $result->fetch_assoc();
+            if (password_verify($password, $row['password'])) {
+                $_SESSION['loggedin_mentor'] = true; 
+                $_SESSION['first_name'] = $row['first_name'];
+                $_SESSION['email'] = $row['email'];
+
+                $alertType = "success";
+                $alertMessage = "Login Successful! Redirecting to dashboard...";
+                echo "<script>setTimeout(function(){ window.location.href = 'mentordashboard.php'; }, 2000);</script>";
+            } else {
+                $alertType = "danger";
+                $alertMessage = "Incorrect Password!";
+            }
+        } else {
+            $alertType = "warning";
+            $alertMessage = "No account found with this email!";
+        }
     }
     $conn->close();
 }
@@ -68,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <img src="./logo2-name-removebg.png" alt="MenteE Name" height="30vh" style="margin-left: 1.5%;"/>
         </div> -->
 
-        <div class="container-fluid login">
+        <!-- <div class="container-fluid login">
             <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom shadow">
                 <div class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                 <img src="./_temps/logo2-removebg.png" alt="MenteE Logo" height="40vh"/>
@@ -80,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <li class="nav-item"><a href="./login.php" class="nav-link">Login</a></li>
                 </ul>
             </header>
-        </div>
+        </div> -->
 
         <div class="login-box">
             <form class="LoginForm" action="loginMentor.php" method="POST">
