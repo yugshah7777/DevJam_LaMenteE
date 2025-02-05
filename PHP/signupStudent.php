@@ -19,7 +19,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = mysqli_real_escape_string($conn, $_POST['password']);
     $confirm_password = mysqli_real_escape_string($conn, $_POST['confirm_password']);
 
-    if ($password !== $confirm_password) {
+    if (empty($first_name) || empty($last_name) || empty($email) || empty($password) || empty($confirm_password)) {
+        $alertType = "danger";
+        $alertMessage = "All fields are required!";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $alertType = "warning";
+        $alertMessage = "Invalid email format!";
+    } elseif ($password !== $confirm_password) {
         $alertType = "danger";
         $alertMessage = "Passwords do not match!";
     } else {
