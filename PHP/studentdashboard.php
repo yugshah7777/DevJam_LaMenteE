@@ -1,9 +1,15 @@
 <?php
 session_start();
-if (!isset($_SESSION['loggedin_student']) || $_SESSION['loggedin_student'] !== true) {
-    header("location: loginStudent.php");
+
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Pragma: no-cache");
+header("Expires: Thu, 01 Jan 1970 00:00:00 GMT");
+
+if (!isset($_SESSION['loggedin_student']) || $_SESSION['loggedin_student'] != true) {
+    header("location: loginMentor.php");
     exit;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +40,7 @@ if (!isset($_SESSION['loggedin_student']) || $_SESSION['loggedin_student'] !== t
         
                 <ul class="nav nav-pills">
                     <li class="nav-item"><a href="./studenthome.php" class="nav-link" aria-current="page">Home</a></li>
-                    <li class="nav-item"><a href="./index.php" class="nav-link">Log out</a></li>
+                    <li class="nav-item"><a href="./logout.php" class="nav-link">Log out</a></li>
                 </ul>
             </header>
         </div>
