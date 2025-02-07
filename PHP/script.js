@@ -68,3 +68,12 @@ AOS.init({
     offset: 100 // Start animation when 100px before element enters viewport
 });
 
+
+
+
+
+
+
+
+
+
