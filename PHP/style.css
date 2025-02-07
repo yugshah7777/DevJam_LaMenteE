@@ -194,6 +194,12 @@ nav-link {
     transform: scale(1.02);
 }
 
+@media (max-width: 991px) {
+    .searchStuMen li a{
+        color: white;
+    }
+}
+
 /* this two is used to stick nav bar */
 
 #nav_bar {
