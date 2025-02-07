@@ -70,34 +70,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Reset Password</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"
+    />
+    <link
+        rel="stylesheet"
+        href="style.css"
+    />
 </head>
 <body>
-    <div class="container mt-5">
-        <h2>Reset Your Password</h2>
+    <div class="login-box container mt-5">
         <?php if (!empty($message)) echo "<div class='alert alert-info'>$message</div>"; ?>
 
         <?php if (!isset($_SESSION['otp_verified']) || $_SESSION['otp_verified'] !== true) { ?>
-            <form method="POST">
-                <div class="mb-3">
+            <form class="LoginForm" method="POST">
+                <h2 class="h3 mb-3 fw-normal">Verify Your OTP</h2>                
+                <div class="form-floating mb-3">
                     <label class="form-label">Enter OTP</label>
                     <input type="text" name="otp" class="form-control" required>
                 </div>
-                <button type="submit" name="otp_submit" class="btn btn-success">Verify OTP</button>
+                <button type="submit" name="otp_submit" class="btn btn-success" style="background-color: #7B89B1; color: white;">Verify OTP</button>
             </form>
         <?php } ?>
 
         <?php if (isset($_SESSION['otp_verified']) && $_SESSION['otp_verified'] === true) { ?>
-            <form method="POST">
-                <div class="mb-3">
+            <form class="LoginForm" method="POST">
+                <h2 class="h3 mb-3 fw-normal">Reset Your Password</h2>
+                <div class="form-floating mb-3">
                     <label class="form-label">New Password</label>
                     <input type="password" name="password" class="form-control" required>
                 </div>
-                <div class="mb-3">
+                <div class="form-floating mb-3">
                     <label class="form-label">Confirm Password</label>
                     <input type="password" name="confirm_password" class="form-control" required>
                 </div>
-                <button type="submit" name="password_submit" class="btn btn-success">Reset Password</button>
+                <button type="submit" name="password_submit" class="btn btn-success" style="background-color: #7B89B1; color: white;">Reset Password</button>
             </form>
         <?php } ?>
     </div>
