@@ -264,9 +264,11 @@ body {
     transform: translateY(0);
   }
 
-#typing-text::after {
+#typing-name::after {
     content: "|";
     animation: blink 1s infinite;
+    display: inline-block;
+    margin-left: 3px;
 }
 
 @keyframes blink {
