@@ -32,11 +32,11 @@
                 <!-- Regular Navbar (Visible on Large Screens) -->
                 <ul class="nav nav-pills d-none d-lg-flex">
                     <div id="navCenter">
-                    <li class="nav-item"><a href="./index.php" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Reviews</a></li>
+                    <li class="nav-item"><a href="./index.php" class="nav-link shake-button">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link shake-button">Features</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link shake-button">FAQs</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link shake-button">About</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link shake-button">Reviews</a></li>
                     </div>
                     <li class="nav-item" id="navC"><a href="./login.php" class="nav-link">Login</a></li>
                 </ul>
@@ -47,12 +47,12 @@
                         &#x22EE; <!-- Vertical three dots icon -->
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="./index.php">Home</a></li>
-                        <li><a class="dropdown-item" href="#">Features</a></li>
-                        <li><a class="dropdown-item" href="#">FAQs</a></li>
-                        <li><a class="dropdown-item" href="#">About</a></li>
-                        <li><a class="dropdown-item" href="#">Reviews</a></li>
-                        <li><a class="dropdown-item" href="./login.php">Login</a></li>
+                        <li><a class="dropdown-item shake-button" href="./index.php">Home</a></li>
+                        <li><a class="dropdown-item shake-button" href="#">Features</a></li>
+                        <li><a class="dropdown-item shake-button" href="#">FAQs</a></li>
+                        <li><a class="dropdown-item shake-button" href="#">About</a></li>
+                        <li><a class="dropdown-item shake-button" href="#">Reviews</a></li>
+                        <li><a class="dropdown-item shake-button" href="./login.php">Login</a></li>
                     </ul>
                 </div>
             </header>
