@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Features": "featured-3",
                 "FAQs": "icon-grid",
                 "Reviews": "reviews",
-                "About" : "about_"
+                "About" : "about_",
+                "NavBar" : "nav_bar"
 
             };
 
