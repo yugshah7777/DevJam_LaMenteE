@@ -47,7 +47,7 @@
                         &#x22EE; <!-- Vertical three dots icon -->
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item shake-button" href="./index.php">Home</a></li>
+                        <li><a class="dropdown-item shake-button" href="#">Home</a></li>
                         <li><a class="dropdown-item shake-button" href="#">Features</a></li>
                         <li><a class="dropdown-item shake-button" href="#">FAQs</a></li>
                         <li><a class="dropdown-item shake-button" href="#">About</a></li>
