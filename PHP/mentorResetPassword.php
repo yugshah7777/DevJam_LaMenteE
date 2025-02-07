@@ -1,65 +1,105 @@
+<?php
+session_start();
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "users";
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$message = "";
+
+if (!isset($_SESSION['reset_email'])) {
+    die("Unauthorized access! Please request an OTP first.");
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["otp_submit"])) {
+        $entered_otp = $_POST["otp"];
+        $current_time = date("Y-m-d H:i:s");
+
+        if (isset($_SESSION['otp']) && isset($_SESSION['otp_expiry']) && $_SESSION['otp_expiry'] > $current_time) {
+            if ($entered_otp == $_SESSION['otp']) {
+                $_SESSION['otp_verified'] = true;
+                $message = "OTP verified successfully! Now set your new password.";
+            } else {
+                $message = "Invalid OTP. Please enter the correct OTP.";
+            }
+        } else {
+            $message = "OTP expired. Please request a new OTP.";
+            unset($_SESSION['otp'], $_SESSION['otp_expiry']);
+        }
+    }
+
+    if (isset($_POST["password_submit"])) {
+        if (!isset($_SESSION['otp_verified']) || $_SESSION['otp_verified'] !== true) {
+            die("Unauthorized action! OTP verification required before resetting password.");
+        }
+
+        $new_password = $_POST["password"];
+        $confirm_password = $_POST["confirm_password"];
+        $email = $_SESSION['reset_email'];
+
+        if ($new_password !== $confirm_password) {
+            $message = "Passwords do not match!";
+        } else {
+            $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+            $sql = "UPDATE mentors SET password=?, resettoken=NULL, resettokenexpire=NULL WHERE email=?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ss", $hashed_password, $email);
+            $stmt->execute();
+
+            unset($_SESSION['otp'], $_SESSION['otp_expiry'], $_SESSION['reset_email'], $_SESSION['otp_verified']);
+
+            $message = "Password reset successful! Redirecting to login...";
+            echo "<script>
+                    setTimeout(function() {
+                        window.location.href = 'loginMentor.php';
+                    }, 2000);
+                  </script>";
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
-
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login Page</title>
-        <link 
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"
-        />
-        <link
-            rel="stylesheet"
-            href="style.css"
-        />
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>Reset Password</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Reset Your Password</h2>
+        <?php if (!empty($message)) echo "<div class='alert alert-info'>$message</div>"; ?>
 
-    <body style="background-color: rgb(249, 247, 247);">
-        <!-- <div class="loginImg">
-            <img src="./logo2-removebg.png" alt="MenteE Logo" height="100vh"/>
-            <img src="./logo2-name-removebg.png" alt="MenteE Name" height="30vh" style="margin-left: 1.5%;"/>
-        </div> -->
-
-        <div class="container-fluid login">
-            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom shadow">
-                <div class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <img src="./logo2-removebg.png" alt="MenteE Logo" height="40vh"/>
-                <img src="./logo2-name-removebg.png" alt="MenteE" height="20vh" style="margin-left: 1.5vh;"/>
+        <?php if (!isset($_SESSION['otp_verified']) || $_SESSION['otp_verified'] !== true) { ?>
+            <form method="POST">
+                <div class="mb-3">
+                    <label class="form-label">Enter OTP</label>
+                    <input type="text" name="otp" class="form-control" required>
                 </div>
-        
-                <ul class="nav nav-pills">
-                <li class="nav-item"><a href="./index.html" class="nav-link" aria-current="page">Home</a></li>
-                <li class="nav-item"><a href="./login.html" class="nav-link">Login</a></li>
-                </ul>
-            </header>
-        </div>
-
-        <div class="login-box">
-            <form class="LoginForm">
-                <h1 class="h3 mb-3 fw-normal">Reset Password</h1>
-            
-                <div class="form-floating mb-2">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">New Password</label>
-                </div>
-                <div class="form-floating mb-2">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Confirm Password</label>
-                </div>
-                <a href="./loginMentor.php"><button class="btn w-100 py-2 mt-3" type="button" style="background-color: #7B89B1; color: white;">Create New Password</button></a>
+                <button type="submit" name="otp_submit" class="btn btn-success">Verify OTP</button>
             </form>
-        </div>  
+        <?php } ?>
 
-        <div>
-            <footer>
-                <p>© MenteE</p>
-            </footer>
-        </div>
-
-        <script 
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
-    </body>
+        <?php if (isset($_SESSION['otp_verified']) && $_SESSION['otp_verified'] === true) { ?>
+            <form method="POST">
+                <div class="mb-3">
+                    <label class="form-label">New Password</label>
+                    <input type="password" name="password" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Confirm Password</label>
+                    <input type="password" name="confirm_password" class="form-control" required>
+                </div>
+                <button type="submit" name="password_submit" class="btn btn-success">Reset Password</button>
+            </form>
+        <?php } ?>
+    </div>
+</body>
 </html>
