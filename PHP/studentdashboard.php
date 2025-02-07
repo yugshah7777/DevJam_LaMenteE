@@ -40,7 +40,7 @@ if (!isset($_SESSION['loggedin_student']) || $_SESSION['loggedin_student'] != tr
         
                 <ul class="nav nav-pills">
                     <li class="nav-item"><a href="./studenthome.php" class="nav-link" aria-current="page">Home</a></li>
-                    <li class="nav-item"><a href="./logout.php" class="nav-link">Log out</a></li>
+                    <li class="nav-item"><a href="./studentProfile.php" class="nav-link">My Profile</a></li>
                 </ul>
             </header>
         </div>
