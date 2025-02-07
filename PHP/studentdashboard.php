@@ -52,9 +52,9 @@ if (!isset($_SESSION['loggedin_student']) || $_SESSION['loggedin_student'] !== t
                   <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 searchStuMen">
                     <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Mentors</a>
+                      <a class="nav-link" aria-current="page" href="#">Mentors</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#">My_Mentor</a>
