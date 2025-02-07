@@ -110,11 +110,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label for="floatingPassword">Password</label>
                 </div>
             
-                <div class="form-check text-start my-3">
-                <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                    Remember me
-                </label>
+                <div class="my-3">
+                <a href="./mentorForgetPassword.php" style=" text-decoration: none;">Forget Password?</a>
                 </div>
                 <button class="btn w-100 py-2" type="submit" style="background-color: #7B89B1; color: white;">Sign in</button>
                 <p style="margin-top: 0.5rem;">Do not have an account?   <a href="./signupMentor.php" style=" text-decoration: none;">Sign Up !!</a></p>
