@@ -186,12 +186,12 @@ nav-link {
     width: 23.5rem;    
 }
 
-.LOGIN{
+.LOGIN .p-5 .py-5{
     transition: transform 0.3s ease-in-out;
 }
 
-.LOGIN :hover{
-    transform: scale(1.02);
+.LOGIN .p-5 .py-5:hover{
+    transform: scale(1.03);
 }
 
 @media (max-width: 991px) {
@@ -215,6 +215,21 @@ nav-link {
 body {
     padding-top: 0;
 }
+
+/* shaking buttons added*/
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.shake-button:hover {
+    animation: shake 0.3s ease-in-out;
+}
+
 
 
 
