@@ -228,13 +228,19 @@
         </div>
 
         <!-- Footer -->
-        <div class="container-fluid">
-            <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 border-top">
+        <div class="container-fluid" style="background-color: #0d0550;">
+            <div class="col-12" style="text-align: center;">
+                <h3 style="color: white;">Reach out us at : lamentee.work@gmail.com</h3>
+            </div>
+            <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 border-top border-bottom">              
               <div class="col mb-3">
-                <img src="./logo1-removebg-final.png" style="height: 2.5rem;"/>
-                <p style="color: white;">© MenteE</p>
-              </div>          
-              <div class="col mb-3">
+                <u><h5>About Us</h5></u>
+                <p style="color: white;">
+                    We four Developers of these Site are currently First Year Undergrad at National Institute of Technology, Prayagraj(MNNIT).
+                </p>
+              </div>
+          
+              <div class="col mb-3" style="text-align: center;">
                 <u><h5>Bhargav Miyani</h5></u>
                 <ul class="nav flex-column">
                   <li class="nav-item mb-2"><a href="https://www.linkedin.com/in/bhargav-miyani-3a6243313?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
@@ -243,17 +249,19 @@
                   <li class="nav-item mb-2"><a href="https://discord.gg/TnMxT8kF" class="nav-link p-0"><img src="./discord.svg"/> Discord</a></li>
                   <li class="nav-item mb-2"><a href="https://www.instagram.com/the_bhargavv?igsh=aWZnYXZ6aGtpMW1o" class="nav-link p-0"><img src="./instagram.svg"/> Instragram</a></li>
                 </ul>
-              </div>          
-              <div class="col mb-3">
-                <u><h5>Yug Shah</h5></u>
+              </div>
+          
+              <div class="col mb-3" style="text-align: center;">
+                <u><h5>Yug R. Shah</h5></u>
                 <ul class="nav flex-column">
                   <li class="nav-item mb-2"><a href="https://www.linkedin.com/in/yugshah7777/" class="nav-link p-0"><img src="./linkedin.svg"/> LinkedIn</a></li>
                   <li class="nav-item mb-2"><a href="https://github.com/yugshah7777" class="nav-link p-0"><img src="./github.svg"/> Git-Hub</a></li>
                   <li class="nav-item mb-2"><a href="https://discord.gg/8ENYEXer" class="nav-link p-0"><img src="./discord.svg"/> Discord</a></li>
                   <li class="nav-item mb-2"><a href="https://www.instagram.com/yugshah7777/" class="nav-link p-0"><img src="./instagram.svg"/> Instragram</a></li>
                 </ul>
-              </div>          
-              <div class="col mb-3">
+              </div>
+          
+              <div class="col mb-3" style="text-align: center;">
                 <u><h5>Neel Mendapara</h5></u>
                 <ul class="nav flex-column">
                   <li class="nav-item mb-2"><a href="www.linkedin.com/in/neel-mendapara-08244b324" class="nav-link p-0"><img src="./linkedin.svg"/> LinkedIn</a></li>
@@ -261,8 +269,9 @@
                   <li class="nav-item mb-2"><a href="https://discord.gg/tEMJMFKn" class="nav-link p-0"><img src="./discord.svg"/> Discord</a></li>
                   <li class="nav-item mb-2"><a href="https://www.instagram.com/neel.mendapara/" class="nav-link p-0"><img src="./instagram.svg"/> Instragram</a></li>
                 </ul>
-              </div>          
-              <div class="col mb-3">
+              </div>
+          
+              <div class="col mb-3" style="text-align: center;">
                 <u><h5>Yagnik Chavda</h5></u>
                 <ul class="nav flex-column">
                   <li class="nav-item mb-2"><a href="#" class="nav-link p-0"><img src="./linkedin.svg"/> LinkedIn</a></li>
@@ -272,6 +281,10 @@
                 </ul>
               </div>
             </footer>
+            <div class="mt-2 pb-2" style="text-align: end;">
+                <img src="./logo1-removebg-final.png" style="height: 2.5rem;"/>
+                <p style="color: white; display: inline;">© MenteE</p>
+            </div>
           </div>
 
         <script 
