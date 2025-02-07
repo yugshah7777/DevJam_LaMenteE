@@ -43,30 +43,31 @@
                             <u><h4 class="text-right">Profile</h4></u>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-md-6"><label class="labels">Name</label></div>
+                            <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="First name" value=""></div>
+                            <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="Surname"></div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-12"><label class="labels">Mobile Number</label></div>
-                            <div class="col-md-12 mt-3"><label class="labels">Address Line 1</label></div>
-                            <div class="col-md-12 mt-3"><label class="labels">PinCode</label></div>
-                            <div class="col-md-12 mt-3"><label class="labels">State</label></div>
-                            <div class="col-md-12 mt-3"><label class="labels">Area</label></div>
-                            <div class="col-md-12 mt-3"><label class="labels">Address Line 2</label></div>
-                            <div class="col-md-12 mt-3"><label class="labels">Email ID</label></div>
-                            <div class="col-md-12 mt-3"><label class="labels">Education</label></div>
+                            <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="Enter Phone Number" value=""></div>
+                            <div class="col-md-12 mt-3"><label class="labels">Address Line 1</label><input type="text" class="form-control" placeholder="Enter Address line 1" value=""></div>
+                            <div class="col-md-12 mt-3"><label class="labels">PinCode</label><input type="text" class="form-control" placeholder="Enter Address line 1" value=""></div>
+                            <div class="col-md-12 mt-3"><label class="labels">State</label><input type="text" class="form-control" placeholder="Enter Address line 1" value=""></div>
+                            <div class="col-md-12 mt-3"><label class="labels">Area</label><input type="text" class="form-control" placeholder="Enter Address line 1" value=""></div>
+                            <div class="col-md-12 mt-3"><label class="labels">Address Line 2</label><input type="text" class="form-control" placeholder="Enter Address line 2" value=""></div>
+                            <div class="col-md-12 mt-3"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="Enter Email id" value=""></div>
+                            <div class="col-md-12 mt-3"><label class="labels">Education</label><input type="text" class="form-control" placeholder="Education" value=""></div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-md-6"><label class="labels">State/Region</label></div>
-                            <div class="col-md-6"><label class="labels">Country</label></div>
+                            <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="State"></div>
+                            <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="Country" value=""></div>
                         </div>
-                        <div class="mt-5 text-center"><a href="./studentProfileEdit.php"><button class="btn btn-primary profile-button" type="button">Edit Profile</button></a></div>
+                        <div class="mt-5 text-center"><a href="./studentProfile.php"><button class="btn btn-primary profile-button" type="button">Save Profile</button></a></div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="p-3 py-5">
-                        <div class="d-flex justify-content-between align-items-center experience"><span><u><h4>Experience</h4></u></div><br>
-                        <div class="col-md-12"><label class="labels">Experience</label></div> <br>
-                        <div class="col-md-12"><label class="labels">Additional Details</label></div>
+                        <div class="d-flex justify-content-between align-items-center experience"><span><u><h4>Experience</h4></u></span><span class="border px-3 p-1 add-experience"><i class="fa fa-plus"></i>&nbsp;Experience</span></div><br>
+                        <div class="col-md-12"><label class="labels">Experience</label><input type="text" class="form-control" placeholder="experience" value=""></div> <br>
+                        <div class="col-md-12"><label class="labels">Additional Details</label><input type="text" class="form-control" placeholder="additional details" value=""></div>
                     </div>
                 </div>
             </div>
@@ -78,4 +79,4 @@
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
     </body>
-</html>
+</html> 
