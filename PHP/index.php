@@ -32,7 +32,7 @@
                 <!-- Regular Navbar (Visible on Large Screens) -->
                 <ul class="nav nav-pills d-none d-lg-flex">
                     <div id="navCenter">
-                    <li class="nav-item"><a href="./index.php" class="nav-link shake-button">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link shake-button">Home</a></li>
                     <li class="nav-item"><a href="#" class="nav-link shake-button">Features</a></li>
                     <li class="nav-item"><a href="#" class="nav-link shake-button">FAQs</a></li>
                     <li class="nav-item"><a href="#" class="nav-link shake-button">About</a></li>
