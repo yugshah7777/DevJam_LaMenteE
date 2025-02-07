@@ -88,7 +88,7 @@
         <div class="container-fluid px-4 py-5 features" id="featured-3">            
             <h2 class="pb-2 border-bottom">Features</h2>
             <div class="row g-4 py-3 row-cols-1 row-cols-lg-3">
-                <div class="feature col">
+                <div class="feature col reveal">
                     <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
                         <img src="./_temps/person-lines-fill.svg" alt="person-lines-fill" height="35"/>
                     </div>
@@ -97,7 +97,7 @@
                     <p>Finding the right mentor has never been easier! Our platform connects students with experienced mentors from top colleges based on their interests, career goals, and field of study. Mentees can browse mentor profiles, check their expertise, and select the best match. For a more personalized experience, our system also suggests mentors based on shared interests and availability. Once matched, students can book sessions, ask questions, and receive expert guidance to achieve their academic and career goals. Start your journey with the perfect mentor today!</p>
                 </div>
 
-                <div class="feature col">
+                <div class="feature col reveal">
                     <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
                         <img src="./_temps/calendar-week.svg" alt="calendar-week" height="35"/>
                     </div>
@@ -106,7 +106,7 @@
                     <p>Our platform makes it easy for students to book mentorship sessions with just a few clicks. Mentors set their available time slots, and students can select a convenient time based on their schedule. Once booked, both mentor and mentee receive instant confirmations and reminders to ensure a smooth session. Need to reschedule? No problem! Our flexible system allows easy rescheduling and cancellations. Stay organized, never miss a session, and get the guidance you need, when you need it!</p>
                 </div>
 
-                <div class="feature col">
+                <div class="feature col reveal">
                     <div class="feature-icon d-inline-flex align-items-center justify-content-center bg-gradient fs-2 mb-3">
                         <img src="./_temps/bookmarks.svg" alt="bookmarks" height="35"/>
                     </div>
@@ -123,35 +123,35 @@
         
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-3 FAQs">
                 <div class="col d-flex align-items-start">
-                    <div>
+                    <div class="reveal">
                         <h3 class="fw-bold mb-0 fs-4">How do I choose the right mentor for me?</h3>
                         <p>You can browse through our directory of mentors and filter by areas of expertise, availability, and experience. Each mentor has a profile with their qualifications, areas of specialization, and reviews from previous mentees. You can also use our matching tool, which will suggest mentors based on your goals.</p>
                     </div>
                 </div>
 
                 <div class="col d-flex align-items-start FAQ">
-                    <div>
+                    <div class="reveal">
                         <h3 class="fw-bold mb-0 fs-4">Is there a fee for the mentorship?</h3>
                         <p>Yes, some mentorship programs on our platform are paid, while others may offer free sessions. The cost varies depending on the mentor and the type of mentorship you select. Pricing details are available on each mentor’s profile.</p>
                     </div>
                 </div>
 
                 <div class="col d-flex align-items-start">
-                    <div>
+                    <div class="reveal">
                         <h3 class="fw-bold mb-0 fs-4">How are mentors selected?</h3>
                         <p>All mentors on MenteE are carefully vetted to ensure they have the necessary qualifications, experience, and expertise. They undergo a thorough application process and are required to meet specific standards before being approved.</p>
                     </div>
                 </div>
 
                 <div class="col d-flex align-items-start FAQ">
-                    <div>
+                    <div class="reveal">
                         <h3 class="fw-bold mb-0 fs-4">How does the mentorship work?</h3>
                         <p>Mentorship can happen through video calls, phone calls, or messaging, depending on your agreement with your mentor. Sessions are typically scheduled based on mutual availability, and you can choose the frequency and duration of meetings that best suit your goals.</p>
                     </div>
                 </div>
 
                 <div class="col d-flex align-items-start FAQ">
-                    <div>
+                    <div class="reveal">
                         <h3 class="fw-bold mb-0 fs-4">Can I change my mentor if I’m not satisfied?</h3>
                         <p>Yes! If you feel that your current mentor is not the right fit, you can switch to another mentor. We encourage open communication with your mentor to ensure a positive and productive relationship.
                         </p>
@@ -159,21 +159,21 @@
                 </div>
 
                 <div class="col d-flex align-items-start">
-                    <div>
+                    <div class="reveal">
                         <h3 class="fw-bold mb-0 fs-4">What if I miss a session?</h3>
                         <p>If you miss a session, please inform your mentor ahead of time to reschedule. We recommend setting reminders for your meetings to ensure you don’t forget. Cancellation policies may vary, so check with your mentor or the platform’s terms for more details.</p>
                     </div>
                 </div>
 
                 <div class="col d-flex align-items-start FAQ">
-                    <div>
+                    <div class="reveal">
                         <h3 class="fw-bold mb-0 fs-4">Can I be a mentor on MenteE?</h3>
                         <p>Yes! If you have the relevant experience and a passion for helping others, you can apply to become a mentor on our platform. Simply fill out the application form, and our team will review your credentials and experience to determine if you're a good fit.</p>
                     </div>
                 </div>
 
                 <div class="col d-flex align-items-start">
-                    <div>
+                    <div class="reveal">
                         <h3 class="fw-bold mb-0 fs-4">Can I leave a review for my mentor?</h3>
                         <p>Yes, after each session, you can leave feedback about your mentor. Reviews help other mentees make informed decisions and provide valuable insights into the mentor’s strengths and areas of expertise.</p>
                     </div>
@@ -184,8 +184,8 @@
          
         <!-- About -->
         <div class="about py-5" id="about_">
-            <h2 class="pb-2 border-bottom" style="text-align: justify;">About Us</h2>
-            <div class="py-3">
+            <h2 class="pb-2 border-bottom reveal" style="text-align: justify;">About Us</h2>
+            <div class="py-3 reveal">
                 <p>
                     Many students face challenges in securing admission to top colleges and often lack the guidance needed to navigate their 
                     educational and career paths effectively. Without access to proper mentorship, they struggle to stay updated with advancements in 
@@ -207,25 +207,25 @@
             <h2 class="pb-2 border-bottom" style="text-align: justify; margin-left: 1.5rem;">Review</h2>
             <div class="col-lg-4">
                 <img src="./_temps/Oliver L.crop.jpg" alt="Oliver"/>
-                <h3 class="fs-2">Oliver L.</h3>
-                <p>"Navigating college and career decisions is never easy, but this mentorship platform has been an amazing resource. My mentor helped me make informed choices about my degree and career path. Their experience gave me the clarity and confidence to move forward."</p>
+                <h3 class="fs-2 reveal">Oliver L.</h3>
+                <p class="reveal">"Navigating college and career decisions is never easy, but this mentorship platform has been an amazing resource. My mentor helped me make informed choices about my degree and career path. Their experience gave me the clarity and confidence to move forward."</p>
             </div><!-- /.col-lg-4 -->
 
             <div class="col-lg-4">
                 <img src="./_temps/Sophia C.crop.jpg" alt="Sophia"/>
-                <h3 class="fs-2">Sophia C.</h3>
-                <p>"I joined this platform after completing a coding bootcamp to get advice from someone who had already gone through the traditional college route. My mentor gave me detailed guidance on how to apply for graduate programs and the best steps to take in the industry. It was a great experience"</p>
+                <h3 class="fs-2 reveal">Sophia C.</h3>
+                <p class="reveal">"I joined this platform after completing a coding bootcamp to get advice from someone who had already gone through the traditional college route. My mentor gave me detailed guidance on how to apply for graduate programs and the best steps to take in the industry. It was a great experience"</p>
             </div><!-- /.col-lg-4 -->
 
             <div class="col-lg-4">
                 <img src="./_temps/Max P.crop.jpg" alt="Max"/>
-                <h3 class="fs-2">Max P.</h3>
-                <p>"The guidance I received on industry trends, new technologies, and networking opportunities from my mentor was incredibly insightful. It’s reassuring to know that I can always rely on this platform for continuous support as I navigate my academic and professional journey."</p>
+                <h3 class="fs-2 reveal">Max P.</h3>
+                <p class="reveal">"The guidance I received on industry trends, new technologies, and networking opportunities from my mentor was incredibly insightful. It’s reassuring to know that I can always rely on this platform for continuous support as I navigate my academic and professional journey."</p>
             </div><!-- /.col-lg-4 -->
         </div>
 
         <!-- Footer -->
-        <div>
+        <div class="reveal">
             <footer>
                 <p style="color: white;">© MenteE</p>
             </footer>
@@ -235,7 +235,32 @@
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
+        
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        
+        <script>
+            // Select all elements with the "reveal" class
+            const revealElements = document.querySelectorAll('.reveal');
+
+            // Function to check if the element is in the viewport
+            function handleScroll() {
+            revealElements.forEach((element) => {
+                const rect = element.getBoundingClientRect();
+
+                // Check if the element is within the viewport
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                element.classList.add('active'); // Add active class
+                } else {
+                element.classList.remove('active'); // Remove active class if out of view
+                }
+            });
+            }
+
+            // Run the function on page load and scroll
+            window.addEventListener('scroll', handleScroll);
+            window.addEventListener('load', handleScroll);
+        </script>
+        
         <script src="script.js"></script>
     </body>
 </html>
