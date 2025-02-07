@@ -251,6 +251,19 @@ body {
     border: solid 1px #4A447C;
 }
 
+/* scroll animation */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 0.8s ease;
+  }
+  
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
 
 
 
