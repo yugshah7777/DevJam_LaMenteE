@@ -59,28 +59,31 @@
             
         </div>
 
-        <!-- Carousels -->
-        <div class="container">
-            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="2500">
-                    <img src="./_temps/Mentorship-1.jpeg" class="d-block w-100">
+        <div id="carousels">
+            <h2  id="typing-text" class="container"></h2>
+            <!-- Carousels -->
+            <div class="container">
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="2500">
+                        <img src="./_temps/Mentorship-1.jpeg" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2500">
+                        <img src="./_temps/Mentorship-2.jpeg" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2500">
+                        <img src="./_temps/Mentorship-3.jpg" class="d-block w-100">
+                    </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <div class="carousel-item" data-bs-interval="2500">
-                    <img src="./_temps/Mentorship-2.jpeg" class="d-block w-100">
-                </div>
-                <div class="carousel-item" data-bs-interval="2500">
-                    <img src="./_temps/Mentorship-3.jpg" class="d-block w-100">
-                </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-                </button>
             </div>
         </div>
 
@@ -237,9 +240,41 @@
         </script>
         
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const textElement = document.getElementById("typing-text");
+                const textArray = ["Welcome to the Mentorship Platform!", "Find the best mentors!", "Shape your future with us!"];
+                let textIndex = 0;
+                let charIndex = 0;
+                let isDeleting = false;
+            
+                function typeEffect() {
+                    let currentText = textArray[textIndex];
+                    let displayedText = currentText.substring(0, charIndex);
+            
+                    textElement.textContent = displayedText;
+            
+                    if (!isDeleting && charIndex < currentText.length) {
+                        charIndex++;
+                        setTimeout(typeEffect, 100); // Typing speed
+                    } else if (isDeleting && charIndex > 0) {
+                        charIndex--;
+                        setTimeout(typeEffect, 50); // Deleting speed
+                    } else {
+                        isDeleting = !isDeleting;
+                        if (!isDeleting) {
+                            textIndex = (textIndex + 1) % textArray.length; // Move to the next text
+                        }
+                        setTimeout(typeEffect, 1000); // Pause before retyping
+                    }
+                }
+            
+                typeEffect(); // Start the animation
+            });
+        </script>
         
         <script src="reveal.js"></script>
-        
         <script src="script.js"></script>
     </body>
 </html>
