@@ -32,8 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $row = $result->fetch_assoc();
             if (password_verify($password, $row['password'])) {
                 $_SESSION['loggedin_student'] = true; 
+                $_SESSION['user_id'] = $row['sno'];
                 $_SESSION['first_name'] = $row['first_name'];
                 $_SESSION['email'] = $row['email'];
+                session_write_close();
 
                 $alertType = "success";
                 $alertMessage = "Login Successful! Redirecting to dashboard...";
