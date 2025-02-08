@@ -52,14 +52,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     window.history.back();
                   </script>";
         }
-        // 
-
-    // Redirect to profile display page
-    header("Location: profile.php");
+        
+    header("Location: studentprofile.php");
     exit();
 } else {
-    // Redirect to form page if accessed directly
-    header("Location: index.php");
+    header("Location: studentprofileedit.php");
     exit();
 }
 ?>
