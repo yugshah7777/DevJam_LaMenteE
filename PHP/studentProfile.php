@@ -1,5 +1,13 @@
 <?php
 session_start();
+
+// Check if user data is available
+if (!isset($_SESSION['user_data'])) {
+    header("Location: studentprofileedit.php");
+    exit();
+}
+
+$user = $_SESSION['user_data'];
 ?>
 
 <!DOCTYPE html>
@@ -7,7 +15,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Form</title>
+    <title>Profile</title>
     <link 
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
         rel="stylesheet" 
@@ -18,79 +26,43 @@ session_start();
 
 <body style="background-color: rgb(249, 247, 247);">
     <div class="container rounded bg-white mt-5 mb-5">
-        <form action="save_profile.php" method="POST">
-            <div class="row">
-                <div class="col-md-3 border-right text-center">
-                    <div class="p-3 py-5">
-                        <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Profile Picture">
-                        <span class="font-weight-bold d-block">Enter Your Name</span>
-                        <input type="text" name="first_name" class="form-control mt-2" placeholder="First Name" required>
-                        <input type="text" name="last_name" class="form-control mt-2" placeholder="Last Name" required>
-                    </div>
+        <div class="row">
+            <div class="col-md-3 border-right text-center">
+                <div class="p-3 py-5">
+                    <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Profile Picture">
+                    <h4 class="mt-3"><?php echo htmlspecialchars($user['first_name'] . " " . $user['last_name']); ?></h4>
+                    <p class="text-black-50"><?php echo htmlspecialchars($user['email']); ?></p>
                 </div>
+            </div>
 
-                <div class="col-md-5 border-right">
-                    <div class="p-3 py-5">
-                        <h4 class="text-right"><u>Profile</u></h4>
-                        <div class="row mt-3">
-                            <div class="col-md-12">
-                                <label class="labels">Mobile Number</label>
-                                <input type="text" name="mobile" class="form-control" placeholder="Enter phone number" required>
-                            </div>
-                            <div class="col-md-12 mt-3">
-                                <label class="labels">Email ID</label>
-                                <input type="email" name="email" class="form-control" placeholder="Enter email" required>
-                            </div>
-                            <div class="col-md-12 mt-3">
-                                <label class="labels">Address Line 1</label>
-                                <input type="text" name="address1" class="form-control" placeholder="Enter address line 1" required>
-                            </div>
-                            <div class="col-md-12 mt-3">
-                                <label class="labels">Address Line 2</label>
-                                <input type="text" name="address2" class="form-control" placeholder="Enter address line 2">
-                            </div>
-                            <div class="col-md-12 mt-3">
-                                <label class="labels">Pin Code</label>
-                                <input type="text" name="pincode" class="form-control" placeholder="Enter pin code" required>
-                            </div>
-                            <div class="col-md-12 mt-3">
-                                <label class="labels">State</label>
-                                <input type="text" name="state" class="form-control" placeholder="Enter state" required>
-                            </div>
-                            <div class="col-md-12 mt-3">
-                                <label class="labels">Area</label>
-                                <input type="text" name="area" class="form-control" placeholder="Enter area">
-                            </div>
-                            <div class="col-md-12 mt-3">
-                                <label class="labels">Region</label>
-                                <input type="text" name="region" class="form-control" placeholder="Enter region">
-                            </div>
-                            <div class="col-md-12 mt-3">
-                                <label class="labels">Country</label>
-                                <input type="text" name="country" class="form-control" placeholder="Enter country" required>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="p-3 py-5">
-                        <h4><u>Education & Experience</u></h4>
-                        <div class="col-md-12 mt-3">
-                            <label class="labels">Education</label>
-                            <input type="text" name="education" class="form-control" placeholder="Enter education details">
-                        </div>
-                        <div class="col-md-12 mt-3">
-                            <label class="labels">Experience</label>
-                            <input type="text" name="experience" class="form-control" placeholder="Enter experience details">
-                        </div>
-                        <div class="mt-5 text-center">
-                            <button class="btn btn-primary profile-button" type="submit">Save Profile</button>
-                        </div>
+            <div class="col-md-5 border-right">
+                <div class="p-3 py-5">
+                    <h4 class="text-right"><u>Profile Details</u></h4>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><strong>Mobile Number:</strong> <?php echo htmlspecialchars($user['mobile']); ?></div>
+                        <div class="col-md-12 mt-3"><strong>Address Line 1:</strong> <?php echo htmlspecialchars($user['address1']); ?></div>
+                        <div class="col-md-12 mt-3"><strong>Address Line 2:</strong> <?php echo htmlspecialchars($user['address2']); ?></div>
+                        <div class="col-md-12 mt-3"><strong>Pin Code:</strong> <?php echo htmlspecialchars($user['pincode']); ?></div>
+                        <div class="col-md-12 mt-3"><strong>State:</strong> <?php echo htmlspecialchars($user['state']); ?></div>
+                        <div class="col-md-12 mt-3"><strong>Area:</strong> <?php echo htmlspecialchars($user['area']); ?></div>
+                        <div class="col-md-12 mt-3"><strong>Region:</strong> <?php echo htmlspecialchars($user['region']); ?></div>
+                        <div class="col-md-12 mt-3"><strong>Country:</strong> <?php echo htmlspecialchars($user['country']); ?></div>
                     </div>
                 </div>
             </div>
-        </form>
+
+            <div class="col-md-4">
+                <div class="p-3 py-5">
+                    <h4><u>Education & Experience</u></h4>
+                    <div class="col-md-12 mt-3"><strong>Education:</strong> <?php echo htmlspecialchars($user['education']); ?></div>
+                    <div class="col-md-12 mt-3"><strong>Experience:</strong> <?php echo htmlspecialchars($user['experience']); ?></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5 text-center">
+            <a href="studentprofileedit.php"><button class="btn btn-primary">Edit Profile</button></a>
+        </div>
     </div>
 
     <script 
