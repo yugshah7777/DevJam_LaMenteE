@@ -47,10 +47,13 @@ if (!isset($_SESSION['loggedin_student']) || $_SESSION['loggedin_student'] != tr
             </header>
         </div>
 
-        <<!-- Search Bar -->
+        <!-- Search Bar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light StudSearch" aria-label="Offcanvas navbar large">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Hello, Student_Name!!!</a>
+                <!-- pppp -->
+            <div class="typing-container">
+    <span id="typing-text"></span>
+</div>
               <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -205,6 +208,35 @@ if (!isset($_SESSION['loggedin_student']) || $_SESSION['loggedin_student'] != tr
 
     typeEffect();
 </script>
+<script>
+    const text = "Hey," + "<?php echo $mentor_name; ?>"; // Get mentor_name from PHP
 
+    let index = 0;
+    let isDeleting = false;
+    
+    function typeEffect() {
+        const element = document.getElementById("typing-text");
+
+        if (!isDeleting) {
+            element.textContent = text.substring(0, index + 1);
+            index++;
+            if (index === text.length) {
+                isDeleting = true;
+                setTimeout(typeEffect, 1000); // Pause before deleting
+                return;
+            }
+        } else {
+            element.textContent = text.substring(0, index - 1);
+            index--;
+            if (index === 0) {
+                isDeleting = false;
+            }
+        }
+
+        setTimeout(typeEffect, isDeleting ? 100 : 150); // Adjust speed
+    }
+
+    typeEffect();
+</script>
     </body>
 </html>
