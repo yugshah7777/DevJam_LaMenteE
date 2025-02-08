@@ -41,7 +41,7 @@ if (!isset($_SESSION['loggedin_mentor']) || $_SESSION['loggedin_mentor'] != true
         
                 <ul class="nav nav-pills">
                     <li class="nav-item"><a href="./mentorhome.php" class="nav-link" aria-current="page">Home</a></li>
-                    <li class="nav-item"><a href="./logout.php" class="nav-link">Log out</a></li>
+                    <li class="nav-item"><a href="./mentorProfile.php" class="nav-link">My Profile</a></li>
                 </ul>
             </header>
         </div>

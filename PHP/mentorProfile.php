@@ -1,3 +1,18 @@
+<?php
+session_start();
+$mentor_name = isset($_SESSION['first_name']) ? $_SESSION['first_name'] : "Mentor";
+
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Pragma: no-cache");
+header("Expires: Thu, 01 Jan 1970 00:00:00 GMT");
+
+if (!isset($_SESSION['loggedin_mentor']) || $_SESSION['loggedin_mentor'] != true) {
+    header("location: loginMentor.php");
+    exit;
+}
+
+?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -20,13 +35,13 @@
         <div class="container-fluid home">
             <header class="d-flex flex-wrap justify-content-center py-3 border-bottom">
                 <div class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <img src="./logo2-removebg.png" alt="MenteE Logo" height="40vh"/>
-                <img src="./logo2-name-removebg.png" alt="MenteE" height="20vh" style="margin-left: 1.5vh;"/>
+                <img src="./_temps/logo2-removebg.png" alt="MenteE Logo" height="40vh"/>
+                <img src="./_temps/logo2-name-removebg.png" alt="MenteE" height="20vh" style="margin-left: 1.5vh;"/>
                 </div>
         
                 <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="./student.html" class="nav-link" aria-current="page">Dashboard</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">LogOut</a></li>
+                    <li class="nav-item"><a href="./mentordashboard.php" class="nav-link" aria-current="page">Dashboard</a></li>
+                    <li class="nav-item"><a href="./logout.php" class="nav-link">Log Out</a></li>
                 </ul>
             </header>
         </div>
