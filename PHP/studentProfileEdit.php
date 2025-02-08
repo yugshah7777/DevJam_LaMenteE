@@ -29,7 +29,7 @@
                     <li class="nav-item"><a href="./logout.php" class="nav-link">Log Out</a></li>
                 </ul>
             </header>
-        <form action="save_profile.php" method="POST">
+        <form action="saveprofilestudent.php" method="POST">
             <div class="row">
                 <div class="col-md-3 border-right text-center">
                     <div class="p-3 py-5">
