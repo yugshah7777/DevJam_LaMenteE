@@ -47,16 +47,10 @@ if (!isset($_SESSION['loggedin_student']) || $_SESSION['loggedin_student'] != tr
             </header>
         </div>
 
-        <!-- Search Bar -->
+        <<!-- Search Bar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light StudSearch" aria-label="Offcanvas navbar large">
             <div class="container-fluid">
-
-
-                          <!-- pppp -->
-            <div class="typing-container">
-    <span id="typing-text"></span>
-</div>
-
+              <a class="navbar-brand" href="#">Hello, Student_Name!!!</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -96,6 +90,83 @@ if (!isset($_SESSION['loggedin_student']) || $_SESSION['loggedin_student'] != tr
               </div>
             </div>
         </nav>
+
+        <!-- Cards -->
+        <div class="row mb-2 mt-4">
+          <div class="col-md-4">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <u><h2 class="mb-2" style="color: #0D0550;">MentorName</h2></u>
+                <h3 class="d-inline-block mt-2" style="color: #4A447C;">Education :-</h3>
+                <p class="card-text mb-auto" style="color: #4A447C;">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <u><h2 class="mb-2" style="color: #0D0550;">MentorName</h2></u>
+                <h3 class="d-inline-block mt-2" style="color: #4A447C;">Education :-</h3>
+                <p class="card-text mb-auto" style="color: #4A447C;">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <u><h2 class="mb-2" style="color: #0D0550;">MentorName</h2></u>
+                <h3 class="d-inline-block mt-2" style="color: #4A447C;">Education :-</h3>
+                <p class="card-text mb-auto" style="color: #4A447C;">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <u><h2 class="mb-2" style="color: #0D0550;">MentorName</h2></u>
+                <h3 class="d-inline-block mt-2" style="color: #4A447C;">Education :-</h3>
+                <p class="card-text mb-auto" style="color: #4A447C;">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <u><h2 class="mb-2" style="color: #0D0550;">MentorName</h2></u>
+                <h3 class="d-inline-block mt-2" style="color: #4A447C;">Education :-</h3>
+                <p class="card-text mb-auto" style="color: #4A447C;">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <u><h2 class="mb-2" style="color: #0D0550;">MentorName</h2></u>
+                <h3 class="d-inline-block mt-2" style="color: #4A447C;">Education :-</h3>
+                <p class="card-text mb-auto" style="color: #4A447C;">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
         <!-- JavaScript -->
