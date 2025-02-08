@@ -73,18 +73,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Forgot Password</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"
+    />
+    <link
+        rel="stylesheet"
+        href="style.css"
+    />
 </head>
 <body>
-    <div class="container mt-5">
-        <h2>Forgot Password</h2>
+<div class="login-box container mt-5">
         <?php if (!empty($message)) echo "<div class='alert alert-info'>$message</div>"; ?>
-        <form method="POST">
-            <div class="mb-3">
+        <form class="LoginForm" method="POST">
+        <h2 class="h3 mb-4 fw-normal">Enter Details</h2>
+        <div class="form-floating mb-4">
                 <label class="form-label">Enter Your Email</label>
                 <input type="email" name="email" class="form-control" required>
             </div>
-            <button type="submit" class="btn btn-primary">Send OTP</button>
+            <button type="submit" class="btn" style="background-color: #7B89B1; color: white;">Send OTP</button>
         </form>
     </div>
 </body>
