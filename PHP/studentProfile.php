@@ -6,8 +6,8 @@ header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Pragma: no-cache");
 header("Expires: Thu, 01 Jan 1970 00:00:00 GMT");
 
-if (!isset($_SESSION['loggedin_mentor']) || $_SESSION['loggedin_mentor'] != true) {
-    header("location: loginMentor.php");
+if (!isset($_SESSION['loggedin_student']) || $_SESSION['loggedin_student'] != true) {
+    header("location: loginStudent.php");
     exit;
 }
 
@@ -40,7 +40,7 @@ if (!isset($_SESSION['loggedin_mentor']) || $_SESSION['loggedin_mentor'] != true
                 </div>
         
                 <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="./studentdashboard.phpl" class="nav-link" aria-current="page">Dashboard</a></li>
+                    <li class="nav-item"><a href="./studentdashboard.php" class="nav-link" aria-current="page">Dashboard</a></li>
                     <li class="nav-item"><a href="./logout.php" class="nav-link">Log Out</a></li>
                 </ul>
             </header>
