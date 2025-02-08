@@ -83,13 +83,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     />
 </head>
 <body>
-    <div class="login-box container mt-5">
-        <?php if (!empty($message)) echo "<div class='alert alert-info'>$message</div>"; ?>
+    <?php if (!empty($message)) echo "<div class='alert alert-info'>$message</div>"; ?>
+    <div class="login-box container">
         <form class="LoginForm" method="POST">     
         <h2 class="h3 mb-4 fw-normal">Enter Details</h2>           
             <div class="form-floating mb-4">
-                <label class="form-label">Enter Your Email</label>
-                <input type="email" name="email" class="form-control" required>
+                <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" >
+                <label for="floatingInput">Email Address</label>
             </div>
             <button type="submit" class="btn" style="background-color: #7B89B1; color: white;">Send OTP</button>
         </form>

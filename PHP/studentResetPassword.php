@@ -80,15 +80,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     />
 </head>
 <body>
-    <div class="login-box container mt-5">
-        <?php if (!empty($message)) echo "<div class='alert alert-info'>$message</div>"; ?>
+<?php if (!empty($message)) echo "<div class='alert alert-info'>$message</div>"; ?>
+    <div class="login-box container">
 
         <?php if (!isset($_SESSION['otp_verified']) || $_SESSION['otp_verified'] !== true) { ?>
             <form class="LoginForm" method="POST">
                 <h2 class="h3 mb-3 fw-normal">Verify Your OTP</h2>                
                 <div class="form-floating mb-3">
-                    <label class="form-label">Enter OTP</label>
-                    <input type="text" name="otp" class="form-control" required>
+                <input type="password" name="otp" class="form-control" id="floatingPassword" placeholder="number">
+                <label for="floatingPassword">Enter OTP</label>
                 </div>
                 <button type="submit" name="otp_submit" class="btn btn-success" style="background-color: #7B89B1; color: white;">Verify OTP</button>
             </form>
@@ -98,12 +98,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <form class="LoginForm" method="POST">
                 <h2 class="h3 mb-3 fw-normal">Reset Your Password</h2>
                 <div class="form-floating mb-3">
-                    <label class="form-label">New Password</label>
-                    <input type="password" name="password" class="form-control" required>
+                <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">New Password</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <label class="form-label">Confirm Password</label>
-                    <input type="password" name="confirm_password" class="form-control" required>
+                <input type="password" name="confirm_password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Confirm Password</label>
                 </div>
                 <button type="submit" name="password_submit" class="btn btn-success" style="background-color: #7B89B1; color: white;">Reset Password</button>
             </form>
