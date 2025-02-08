@@ -25,8 +25,8 @@
                 </div>
         
                 <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="./student.html" class="nav-link" aria-current="page">Dashboard</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">LogOut</a></li>
+                    <li class="nav-item"><a href="./studentdashboard.php" class="nav-link" aria-current="page">Dashboard</a></li>
+                    <li class="nav-item"><a href="./logout.php" class="nav-link">Log Out</a></li>
                 </ul>
             </header>
         </div>
