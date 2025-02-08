@@ -20,8 +20,8 @@
         <div class="container-fluid home">
             <header class="d-flex flex-wrap justify-content-center py-3 border-bottom">
                 <div class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <img src="./logo2-removebg.png" alt="MenteE Logo" height="40vh"/>
-                <img src="./logo2-name-removebg.png" alt="MenteE" height="20vh" style="margin-left: 1.5vh;"/>
+                <img src="./_temps/logo2-removebg.png" alt="MenteE Logo" height="40vh"/>
+                <img src="./_temps/logo2-name-removebg.png" alt="MenteE" height="20vh" style="margin-left: 1.5vh;"/>
                 </div>
         
                 <ul class="nav nav-pills">
